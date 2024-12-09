@@ -84,7 +84,6 @@ class ProductResource extends Resource
                     }),
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
-                
             ])
             ->headerActions([
                 ExportAction::make()->exporter(ProductExporter::class)

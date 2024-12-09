@@ -19,10 +19,15 @@ class Order extends Model
         'localitate',
         'total',
         'produse',
+        'bundle',
+        'id_categorie',
+        'personalizate'
     ];
 
     protected $casts = [
-        'produse' => 'json'
+        'produse' => 'json',
+        'bundle' => 'json',
+        'personalizate' => 'json'
     ];
 
     public function user() {
@@ -31,6 +36,10 @@ class Order extends Model
 
     public function product() {
         return $this->hasMany(Product::class, 'id_produs');
+    }
+
+    public function bundle() {
+        return $this->hasMany(Bundle::class, 'id');
     }
 
     public function categories() {
