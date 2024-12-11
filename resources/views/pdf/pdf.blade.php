@@ -20,6 +20,20 @@
                 <td>{{ $produs['pret'] }} Lei</td>
             </tr>
         @endforeach
+        @foreach ($record['personalizate'] as $pers)
+            <tr>
+                <td>Bundle personalizat (Discound - {{ $pers['discount'] }})</td>
+                <td></td>
+                <td>{{ $pers['totalbundle'] }} Lei</td>
+            </tr>
+            @foreach ($pers['produsepersonalizate'] as $prodpers)
+                <tr>
+                    <td>{{ $prodpers['name'] }}</td>
+                    <td style="text-align: center">{{ $prodpers['cantitate'] }}</td>
+                    <td>{{ $prodpers['pret'] }} Lei</td>
+                </tr>
+            @endforeach
+        @endforeach
     </table>
     <div class="total">
         Total: {{ $record->total }} Lei
