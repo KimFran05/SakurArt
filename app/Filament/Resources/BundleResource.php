@@ -29,6 +29,8 @@ class BundleResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-check';
 
+    protected static bool $shouldRegisterNavigation = false;
+
     public static function form(Form $form): Form
     {
         return $form
